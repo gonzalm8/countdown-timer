@@ -1,38 +1,258 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500&display=swap');
+
+html, body{
+  height:100%;
+
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: hsl(234, 17%, 12%);
+  background-image: url(images/bg-stars.svg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  overflow: hidden;
+}
+
+#root{
+  height: inherit;
+  color: hsl(237, 18%, 59%);
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.wrapper{
+  margin:auto;
+  height: 35%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+.wrapper h1{
+  text-align: center;
+  margin: auto;
+  padding: 100px 0 50px 0;
+  color: hsl(0, 0%, 100%);
+}
+
+.timer{
+    height:25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-flow: row nowrap; */
+}
+
+.formWrapper{
+  display: grid;
+  width: inherit;
+  padding: 200px;
+  grid-template-areas: 
+  ". . . . "
+  ". sub sub . ";
+  grid-template-rows: 100px 1fr;
+  /* justify-content: center;
+  align-content: center; */
+  margin:auto;
+  
+  /* background-color: lime; */
+}
+
+.inputWrapper{
+  grid-area: auto;
+  display: flex;
+  flex-flow: column;
+  /* justify-content: space-evenly; */
+  width:75px;
+  height:75px;
+}
+
+.inputWrapper input{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.userInput{
+  height:50px;
+  width: 50px;
+  margin:auto;
+  background-color:hsl(234, 17%, 12%);
+  border:none;
+  border-bottom: 1px solid hsl(237, 18%, 59%);
+  padding-bottom: 5px;
+  color: hsl(237, 18%, 59%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label{
+  padding-top:5px;
+  color: hsl(237, 18%, 59%);
+  margin:auto;
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input[type=submit]{
+  grid-area: sub;
+  height:25px;
+  width: 100px;
+  border:none;
+  border-radius:5px;
+  margin:auto;
+  background-color: hsl(237, 18%, 59%);
+  color: hsl(234, 17%, 12%);
+}
+
+input[type=submit]:hover{
+  cursor: pointer;
+}
+
+/* I have no idea what this class is about */
+.displayDate{
+  display: flex
+}
+
+.listWrapper{
+    display: grid; 
+    width: 100%;
+    /* padding: 200px; */
+    grid-template-areas: ". . . . ";
+    /* grid-template-rows: 100px 1fr; */
+    /* grid-gap:15px; */
+    margin: auto 0;
+    /* background-color:tomato; */
+}
+
+.timeInterval {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: column nowrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 75px;
+  width: 100%;
+  /* margin: auto; */
+  /* background-color: hsl(234, 17%, 12%); */
+  /* background-color:lime; */
+  /* border: none;
+  border-bottom: 1px solid hsl(237, 18%, 59%); */
+  padding: 5px 0;
+  color: hsl(237, 18%, 59%);
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.timeInterval h2{
+  height:60px;
+  width:55px;
+  background-color:hsl(235, 16%, 14%);
+  text-align: center;
+  font-size: 2em;
+  margin:0 auto;
+  padding:5px;
+  border-radius: 5px;
+  color: hsl(345, 95%, 68%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.timeInterval p{
+  align-self: flex-start;
+  width:100%;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer{
+  position: absolute;
+  bottom:0;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  /* background-color:lime; */
+  background-image: url(./images/pattern-hills.svg);
+  background-position: 25% 25%;
+  /* background-size: contain; */
+  background-repeat: no-repeat;
+  height: 200px;
+  width:100%;
+}
+
+.footer a{
+  align-self: center;
+}
+
+#fb{
+  height: 24px;
+  width: 24px;
+  background-image:url(./images/icon-facebook.svg);
+  background-repeat: no-repeat;
+}
+#insta {
+  height: 24px;
+  width: 24px;
+  background-image: url(./images/icon-instagram.svg);
+  background-repeat: no-repeat;
+}
+
+#pin{
+  height: 24px;
+  width: 24px;
+  background-image: url(./images/icon-pinterest.svg);
+  background-repeat: no-repeat;
+}
+
+.hideText{
+  visibility: hidden;
+}
+
+@media screen and (min-width:841px){
+  .listWrapper{
+    width:35%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .timeInterval{
+    /* justify-content: center; */
+    margin:auto;
+    width:75%;
+  }
+
+  .timeInterval h2{
+    font-size: 3em;
+    padding:15px;
+  }
+
+  .footer{
+    justify-content: center;
+  }
+
+  .footer a{
+    margin-top:100px;
+    padding:15px;
   }
 }
+
+@media screen and (min-width:1440px){
+  html, body{
+    /* width:100%; */
+    background-size: cover;
+  }
+
+  .listWrapper {
+    width: 35%;
+  }
+
+  .timeInterval {
+    /* justify-content: center; */
+    margin: auto;
+    width: 75%;
+  }
+
+  .timeInterval h2 {
+    font-size: 3em;
+    padding: 15px;
+  }
+
+  .footer {
+    justify-content: center;
+    background-size: cover;
+    /* background-repeat: repeat-x; */
+  }
+
+  .footer a {
+    margin-top: 100px;
+    padding: 15px;
+  }
+}
+
