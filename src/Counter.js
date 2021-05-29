@@ -62,9 +62,9 @@ class Counter extends React.Component{
           }
         </div>
         <div className="footer">
-          <a href="#" id="fb"><p className="hideText">Follow us on Facebook</p></a>
-          <a href="#" id="insta"><p className="hideText">Follow us on Instagram</p></a>
-          <a href="#" id="pin"><p className="hideText">Follow us on Pintrest</p></a>
+          <a href="facebook.com" id="fb"><p className="hideText">Follow us on Facebook</p></a>
+          <a href="instagram.com" id="insta"><p className="hideText">Follow us on Instagram</p></a>
+          <a href="pintrest.com" id="pin"><p className="hideText">Follow us on Pintrest</p></a>
         </div>
       </div>
     );
